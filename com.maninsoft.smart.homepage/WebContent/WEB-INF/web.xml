@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>
+	com.maninsoft.smart.homepage</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<session-config>
+		<session-timeout>18000</session-timeout>
+	</session-config>
+	<filter>
+		<filter-name>clueRequestFilter</filter-name>
+		<filter-class>kr.co.cluecom.filters.tomcat5.ClueTC5RequestFilter</filter-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>0</param-value>
+	    </init-param>
+	    <init-param>
+			<param-name>encoding</param-name>
+			<param-value>EUC-KR</param-value>
+	    </init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>clueRequestFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>AttachmentDownloadServlet</servlet-name>
+		<servlet-class>com.maninsoft.smart.homepage.servlet.AttachmentDownloadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AttachmentDownloadServlet</servlet-name>
+		<url-pattern>/servlet/AttachmentDownloadServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,213 @@
+
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script type="text/javascript" language="javascript">
+	var prevCategory = null;
+	var prevMenuTr 	 = null;
+	var prevMenu = null;
+	
+	function categoryOpen(category, linkUrl) {
+		var clickdCategory = $(category+'CatTr');
+		var clickdMenu = $(category+'MenuTr');
+
+		if(clickdCategory != null) {
+			if(clickdCategory != prevCategory) {
+				if(prevCategory != null)
+					prevCategory.style.fontWeight  = "";
+
+				if(prevMenu != null)	
+					prevMenu.style.fontWeight  = "";
+
+				if(clickdCategory != null)
+					clickdCategory.style.fontWeight  = "bold";
+				if(clickdMenu != null)
+					clickdMenu.show();
+			} else {
+				if(prevCategory != null)
+					prevCategory.style.fontWeight  = "bold";
+
+				if(prevMenuTr.visible()) {
+					prevMenuTr.hide();
+				} else {
+					prevMenuTr.show();
+				}
+			}
+		}
+		prevCategory = clickdCategory;
+		prevMenuTr = clickdMenu;
+		prevMenu = null;
+		
+		if(linkUrl != "" && linkUrl != null) {
+			document.manualForm.action = linkUrl;
+			document.manualForm.target = "mainFrame";
+			document.manualForm.submit();
+		}
+	}
+	
+	
+	function menuOpen(menuId) {
+		var clickedMenu = $(menuId);
+		if(clickedMenu != null) {
+			if(prevMenu != clickedMenu) {
+				if(prevMenu != null)	
+					prevMenu.style.fontWeight  = "";
+				if(clickedMenu != null)	
+					clickedMenu.style.fontWeight  = "bold";
+				document.manualForm.action = menuId+".htm";
+				document.manualForm.target = "mainFrame";
+				document.manualForm.submit();
+			}
+			prevMenu = clickedMenu;
+		}
+	}
+	
+</script>
+</head>
+<link href="css/style_01.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/prototype-1.6.0.2.js"></script>
+<body onload="categoryOpen('Introduction', '0010.htm');">
+<form name="manualForm" style="margin: 0px;">
+<table width="266" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/left_tit01.jpg" width="266" height="26"></td>
+  </tr>
+  <tr>
+    <td height="15" bgcolor="#f6f6f6">&nbsp;</td>
+  </tr>
+ <span class="txblue"> <tr>
+    <td align="center" bgcolor="#f6f6f6"><table width="240" border="0" cellspacing="0" cellpadding="0">
+      <tr id="IntroductionCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Introduction', '0010.htm');" onfocus="this.blur()">Introduction</a> </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="InstallationCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Installation', '1010.htm');" onfocus="this.blur()">Installation</a> </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="ProfileCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Profile', '');" onfocus="this.blur()">스마트웍스닷넷 이란 ?</a> </td>
+      </tr>
+      <tr id="ProfileMenuTr" style="display: none;">
+        <td width="16">&nbsp;</td>
+        <td width="250"><p><img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('2010');" id="2010" onfocus="this.blur()">스마트웍스닷넷 개요</a> <br>
+                <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('2020');" id="2020" onfocus="this.blur()">스마트웍스닷넷 구성</a> <br>
+                <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('2030');" id="2030" onfocus="this.blur()">업무 종류</a> <br>
+        </p></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="AppstoreCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Appstore', '');" onfocus="this.blur()">업무앱스토어(App store)</a> </td>
+      </tr>
+      <tr id="AppstoreMenuTr" style="display: none;">
+        <td>&nbsp;</td>
+        <td><img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('3010');" id="3010" onfocus="this.blur()">업무앱스토어란?</a> <br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('3020');" id="3020" onfocus="this.blur()">앱스토어 이용방법</a> </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="LocalWorksCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('LocalWorks', '');" onfocus="this.blur()">업무관리소 (Local Works Management Place)</a></td>
+      </tr>
+      <tr id="LocalWorksMenuTr" style="display: none;">
+        <td>&nbsp;</td>
+        <td><img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('4010');" id="4010" onfocus="this.blur()">업무관리소란?</a> <br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('4020');" id="4020" onfocus="this.blur()">업무 카테고리 관리 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('4025');" id="4025" onfocus="this.blur()">업무 상태관리-편집,시작/중지 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('4030');" id="4030" onfocus="this.blur()">업무/업무그룹 관리 </a></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="BuilderCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Builder', '');" onfocus="this.blur()">스마트웍스 빌더</a> </td>
+      </tr>
+      <tr id="BuilderMenuTr" style="display: none;">
+        <td>&nbsp;</td>
+        <td><img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('5010');" id="5010" onfocus="this.blur()">프로세스 빌더</a> <br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('5020');" id="5020" onfocus="this.blur()">프로세스 빌더 툴바 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('5030');" id="5030" onfocus="this.blur()">프로세스 에디터 속성 </a> <br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('7010');" id="7010" onfocus="this.blur()">폼빌더</a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('7020');" id="7020" onfocus="this.blur()">폼빌더 툴바 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('7030');" id="7030" onfocus="this.blur()">폼빌더 항목 속성(공통) </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('7040');" id="7040" onfocus="this.blur()">폼빌더 항목 속성(항목별) </a></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="ProcessCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Process', '');" onfocus="this.blur()">프로세스업무 만들기</a> </td>
+      </tr>
+      <tr id="ProcessMenuTr" style="display: none;">
+        <td>&nbsp;</td>
+        <td><img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('6010');" id="6010" onfocus="this.blur()">프로세스업무 정의 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('6020');" id="6020" onfocus="this.blur()">프로세스에디터 레인 추가 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('6030');" id="6030" onfocus="this.blur()">프로세스에디터 편집 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('6040');" id="6040" onfocus="this.blur()">프로세스업무 업무화면 지정 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('6050');" id="6050" onfocus="this.blur()">프로세스 태스크 수행자 지정 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('6060');" id="6060" onfocus="this.blur()">프로세스업무 시작태스크 지정 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('6070');" id="6070" onfocus="this.blur()">프로세스업무 태스크 분기조건 설정 </a></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="FormCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Form', '');" onfocus="this.blur()">정보관리업무/업무화면 만들기</a> </td>
+      </tr>
+      <tr id="FormMenuTr" style="display: none;">
+        <td>&nbsp;</td>
+        <td><img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('8010');" id="8010" onfocus="this.blur()">업무화면 생성 추가 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('8020');" id="8020" onfocus="this.blur()">정보관리업무 생성 추가 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('8030');" id="8030" onfocus="this.blur()">셀 편집과 항목 추가 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('8040');" id="8040" onfocus="this.blur()">폼 항목 속성 편집 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('8050');" id="8050" onfocus="this.blur()">데이타 가져오기/내보내기 </a></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="WorkplaceCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Workplace', '');" onfocus="this.blur()">작업공간 (Workplace)</a> </td>
+      </tr>
+      <tr id="WorkplaceMenuTr" style="display: none;">
+        <td>&nbsp;</td>
+        <td><img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('9010');" id="9010" onfocus="this.blur()">작업공간</a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('9020');" id="9020" onfocus="this.blur()">통합검색</a> <br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('9030');" id="9030" onfocus="this.blur()">새 업무 만들기 </a> <br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('9040');" id="9040" onfocus="this.blur()">프로세스업무 조회 </a> <br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('9050');" id="9050" onfocus="this.blur()">정보관리업무 조회 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('9060');" id="9060" onfocus="this.blur()">결재/업무참조/업무전달</a></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="ConfigCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('Config', '');" onfocus="this.blur()">설정</a> </td>
+      </tr>
+      <tr id="ConfigMenuTr" style="display: none;">
+        <td>&nbsp;</td>
+        <td><img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('10010');" id="10010" onfocus="this.blur()">조직 및 사용자설정 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('10020');" id="10020" onfocus="this.blur()">업무 설정 관리 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('10030');" id="10030" onfocus="this.blur()">메일링 관리 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('10040');" id="10040" onfocus="this.blur()">회사정보(메인로고) 관리 </a><br>
+            <img src="images/left_bullet02.gif" width="11" height="11"> <a href="javascript: menuOpen('10050');" id="10050" onfocus="this.blur()">업데이트 관리 </a><br>
+       </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr id="MyInfoCatTr">
+        <td colspan="2"><img src="images/left_bullet01.gif" width="13" height="13" border="0"> <a href="javascript: categoryOpen('MyInfo', '10060.htm');" onfocus="this.blur()">개인정보 관리</a> </td>
+      </tr>
+    </table></td>
+ </tr></span>
+</table>
+</form>
+</body>
+</html>

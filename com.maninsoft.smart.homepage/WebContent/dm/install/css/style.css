@@ -1,0 +1,41 @@
+body  	     { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #666666; line-height: 15px; 
+	margin-left: 0px;margin-top: 0px;margin-right: 0px;	margin-bottom: 0px;}
+
+table   	 { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #666666; line-height: 15px;}
+td       	 { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #666666; line-height: 15px;}
+input   	 { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #666666;}
+select       { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #666666;}	
+textarea     { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #666666;}
+
+A:link       { text-decoration:none; color: #666666; text-decoration:none;}
+A:visited    { text-decoration:none; color: #666666; text-decoration:none;}
+A:active     { text-decoration:none; color: #666666; text-decoration:none;}
+A:hover      { text-decoration:none; color: #666666; text-decoration:none;}
+
+
+/* 텍스트 컬러 부분 */ 
+.txred    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #E3031E;} 
+.txred02    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #dc505b;} 
+.txbgray    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #4a4a4a;}
+.txblue    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #0164b1;}
+.txgreen    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #3a9900;}
+.txwhite    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #ffffff;}
+.txwhiteb    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #ffffff; font-weight: bold;}
+.txwhlarge    { font-family: Dotum,DotumChe,Arial ; font-size: 16px; color: #ffffff; font-weight: bold; line-height: 18px;}
+.txlarge    { font-family: Dotum,DotumChe,Arial ; font-size: 16px; color: #000000; font-weight: bold; line-height: 18px;}
+.txskyb    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #99a4ac; font-weight: bold;}
+.txred03    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #c15c6b;}
+.txblueb    { font-family: Dotum,DotumChe,Arial ; font-size: 12px; color: #4978b7; font-weight: bold;}
+
+/* footer */
+.footer   	 { font-family: Dotum,DotumChe,Arial ; font-size: 11px; color: #666666;}
+
+
+
+
+/* 상단 글로벌 메뉴*/
+.txblue     { text-decoration:none; color: #244ea3; font-family: Dotum,DotumChe,Arial ; font-size: 12px;}
+.txblue a:link    { text-decoration:none; color: #244ea3; font-family: Dotum,DotumChe,Arial ; font-size: 12px;}
+.txblue a:visited    { text-decoration:none; color: #244ea3; font-family: Dotum,DotumChe,Arial ; font-size: 12px;}
+.txblue a:active    { text-decoration:none; color: #244ea3; font-family: Dotum,DotumChe,Arial ; font-size: 12px;}
+.txblue a:hover    { text-decoration:none; color: #244ea3; font-family: Dotum,DotumChe,Arial ; font-size: 12px;}
